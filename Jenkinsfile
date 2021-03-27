@@ -27,7 +27,7 @@ node {
             }
 
             // withCredentials([string(credentialsId: databricks_token, variable: 'TOKEN')]) {
-            //     databricks_bearer_token = TOKEN
+            //     databricks_bearer_token = "abcd"
             // }
 
             if(!databricks_token) {
