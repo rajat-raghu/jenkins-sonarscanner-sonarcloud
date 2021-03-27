@@ -87,7 +87,7 @@ node {
               if(env.destroy_job.toBoolean()){
                        input 'WARNING: Destroying job can result in unrecoverable destruction. Click "Proceed" to confirm Databricks job removal and to authorize the destroy to be applied, else click "Abort".'
                        sh """
-                       echo "Reset the job"
+                       echo "Destroy job"
                        #export DATABRICKS_HOST=https://dbc-31fd7737-02c1.cloud.databricks.com
                        #export DATABRICKS_TOKEN=${databricks_bearer_token}
 
