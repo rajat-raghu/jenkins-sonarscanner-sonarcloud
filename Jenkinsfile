@@ -82,7 +82,7 @@ node {
               else{echo "NOT RESETTING THE JOB"}
     		}
 
-   }
+   
             stage('Destroy job') {
               if(env.destroy_job.toBoolean()){
                        input 'WARNING: Destroying job can result in unrecoverable destruction. Click "Proceed" to confirm Databricks job removal and to authorize the destroy to be applied, else click "Abort".'
