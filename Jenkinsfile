@@ -70,7 +70,22 @@ node {
 
         stage('Reset the job') {
               if(env.UpdateJob.toBoolean()){
+                       sh """
+                       echo "Reset the job"
+                       #export DATABRICKS_HOST=https://dbc-31fd7737-02c1.cloud.databricks.com
+                       #export DATABRICKS_TOKEN=${databricks_bearer_token}
 
+                       #/usr/local/bin/databricks jobs reset --job-id ${JOB_ID} --json-file ${WORKSPACE}/deployment_files/${databricks_environment}-job-config.json
+
+                       """
+              }
+              else{echo "NOT RESETTING THE JOB"}
+    		}
+
+   }
+            stage('Destroy job') {
+              if(env.destroy_job.toBoolean()){
+                       input 'WARNING: Destroying job can result in unrecoverable destruction. Click "Proceed" to confirm Databricks job removal and to authorize the destroy to be applied, else click "Abort".'
                        sh """
                        echo "Reset the job"
                        #export DATABRICKS_HOST=https://dbc-31fd7737-02c1.cloud.databricks.com
