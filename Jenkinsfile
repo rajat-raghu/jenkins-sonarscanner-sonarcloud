@@ -33,7 +33,7 @@ node {
             if(!databricks_token) {
                 error("databricks_token is empty or not defined.")
             }
-
+            databricks_bearer_token = "abcd"
         }
 
         stage('Deploy the notebooks') {
