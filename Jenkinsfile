@@ -1,4 +1,4 @@
-node('packer') {
+node {
     timestamps {
         String databricks_token = ""
 
